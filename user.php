@@ -10,9 +10,8 @@ for($i=20; $i>=0; $i--){
 
 ?>
 <style>
-    div{
-        border-radius:0px !important;
-    }
+    #per-user table th, #per-user table td {font-size:smaller}
+    textarea.form-control {font:12px monospace}
 </style>
 <script>
     
@@ -156,32 +155,29 @@ for($i=20; $i>=0; $i--){
     </div>
 </div>
 
-
-
 <div class="tab-pane" id="per-user">
     <div class="col-md-12">
         
         <div class="panel panel-info" style="clear: both">
             <div class="panel-heading">
-                <h3 class="panel-title">User Variabled in Cache</h3>
+                <h3 class="panel-title">User Variables in Cache</h3>
             </div>
-            <div class="panel-body" style="padding: 0px">
+            <div class="panel-body">
                 <?php
                 if(count($cache_user['cache_list'])==0){
                     ?>
                     <div class="alert alert-warning fade in">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        Sorry, no user varibles found in opcode cache
+                        Sorry, no user variables found in opcode cache
                     </div>
                     <?php
                 } else {
                 ?>
-                <table cellspacing=0 class="table table-striped sorter">
+                <table class="table table-striped sorter">
                     <thead>
                         <tr>
                             <th>Variable</th>
-                            <th>Hits</th>
-                            <th>Size</th>
+                            <th>Hits / Size</th>
                             <th>Created</th>
                             <th>Modified</th>
                             <th>Last Accessed</th>
@@ -206,21 +202,16 @@ for($i=20; $i>=0; $i--){
                                             <input type="hidden" name="name" value="<?php echo $row['info'] ?>"/> 
                                             <table class="table table-striped">
                                                 <tr>
-                                                    <td style="width: 150px">Name</td>
-                                                    <td colspan=2><?php echo $row['info'] ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Type</td>
+                                                    <td style="width: 50px">Type</td>
                                                     <td colspan=2><?php echo gettype($var); ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Value</td>
-                                                    <td colspan=2><pre style="max-width: 450px;max-height: 300px;overflow: auto;"><?php echo displayVar($var); ?></td>
+                                                    <td colspan=3><textarea class="form-control" rows="20"><?php displayDecodedVar($var); ?></textarea></td>
                                                 </tr>
                                                 <?php if($type=='double' || $type=='string' || $type=='integer'){ ?>
                                                 <tr>
                                                     <td>Edit value</td>
-                                                    <td colspan=2><textarea class="form-control" name="value"><?php echo $var ?></textarea></td>
+                                                    <td colspan=2><textarea class="form-control" name="value" rows="10"><?php echo $var ?></textarea></td>
                                                 </tr>
                                                 <?php  } ?>
                                                 <tr>
@@ -231,8 +222,7 @@ for($i=20; $i>=0; $i--){
                                             </table>
                                         </div>
                                     </td>
-                                    <td><?php echo $row['num_hits']?> </td>
-                                    <td><?php echo $row['mem_size']?> </td>
+                                    <td><?php echo $row['num_hits']?> / <?php echo $row['mem_size']?> </td>
                                     <td>
                                         <span class="timeago" title="<?php echo date('c',$row['creation_time'])?>">
                                             <?php echo date('r ',$row['creation_time'])?>
@@ -278,9 +268,11 @@ for($i=20; $i>=0; $i--){
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="save_variable">Save changes</button>
+        <!--
         <button type="button" class="btn btn-danger remove_cache_user_popup" style="float: left">
             <span class="glyphicon glyphicon-trash"></span>
         </button>
+        -->
       </div>
     </div>
   </div>

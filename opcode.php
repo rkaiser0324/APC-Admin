@@ -163,21 +163,6 @@ for ($i = 20; $i >= 0; $i--) {
     .sorter th{
         cursor: pointer;
     }
-    td.options .btn{
-        padding: 4px 6px;
-    }
-    td.options{
-        padding: 3px !important;
-    }
-    .bs-callout-info {
-        background-color: #F0F7FD;
-        border-color: #D0E3F0;
-    }
-    .bs-callout {
-        margin: 0px;
-        padding: 10px;
-        border-left: 6px solid #ADDBFF;
-    }
 </style>
 
 <div class="tab-pane" id="opcode">
