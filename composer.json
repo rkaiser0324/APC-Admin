@@ -1,0 +1,11 @@
+{
+	"name"        : "rkaiser0324/APC-Admin",
+	"description" : "Better admin interface for PHP APC cache, with composer added.   Forked from https://github.com/jithinjose2/APC-Admin.",
+	"version"     : "0.2",
+	"license"     : "MIT",
+	"authors": [
+		{
+			"name" : "jithinjose2@github"
+		}
+	]
+}
