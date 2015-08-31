@@ -93,10 +93,10 @@ function getFragments($mem) {
         });
     });
 </script>
-<div class="col-md-3" style="padding-left: 0px">
+<div class="col-md-3">
     <div id="frag_container" style="width: 250px;height: 100%"></div>
 </div>
-<div class="col-md-9" style="padding-left: 0px">
+<div class="col-md-9">
     
     <ul class="nav nav-tabs">
         <li class="active"><a href="#fragmentation-opcode" data-toggle="tab">Memory Segments - Opcode Cache</a></li>

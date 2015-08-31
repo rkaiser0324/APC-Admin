@@ -119,7 +119,7 @@ for($i=20; $i>=0; $i--){
 </script>
 
 <div class="tab-pane" id="user">
-    <div class="col-md-12" style="padding-left: 0px">
+    <div class="col-md-12">
         
         <div class="panel panel-info">
             <div class="panel-heading">
@@ -159,7 +159,7 @@ for($i=20; $i>=0; $i--){
 
 
 <div class="tab-pane" id="per-user">
-    <div class="col-md-12" style="padding-left: 0px">
+    <div class="col-md-12">
         
         <div class="panel panel-info" style="clear: both">
             <div class="panel-heading">
@@ -264,7 +264,6 @@ for($i=20; $i>=0; $i--){
         
     </div>
 </div>
-
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
